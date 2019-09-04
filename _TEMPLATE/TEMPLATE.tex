@@ -1,0 +1,29 @@
+\documentclass[a4paper]{article}
+
+%*******************************************************************************
+% ÆNDRINGER LAVES HER
+%*******************************************************************************
+\title{Template Dokument}
+% Husk at opdatere "AUTHOR" og dato i filen "00_VersionHistory".
+
+%-------------------------------------------------------------------------------
+% Sæt data til forside. Kan kommenteres ind efter behov.
+%\newcommand{\frontpageDate}{DD-MM-YYYY}  % Samme dato der vises i sidefod
+%\newcommand{\frontpageImage}{ImageName.png}
+%\newcommand{\frontpageCharacters}{NumberOfCharacters}
+%*******************************************************************************
+
+% Inkluder preambles
+\usepackage{../SharedPreamble}
+\usepackage{PrivatePreamble}
+
+\begin{document}
+	\import{../}{Forside}  \newpage
+	\tableofcontents\thispagestyle{fancy}
+	\import{Sektioner/}{00_VersionHistory}  \newpage
+
+	\import{Sektioner/}{99_Eksempel}  \newpage
+
+	\phantomsection \addcontentsline{toc}{section}{Referencer}
+	\printbibliography
+\end{document}
