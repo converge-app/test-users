@@ -22,7 +22,7 @@
 \usepackage[T1]{fontenc}				% Mere encoding
 \usepackage[scaled]{helvet}				% Helvetica
 \renewcommand\familydefault{\sfdefault}	% Default
-\renewcommand*{\ttdefault}{pcr}			% Monospace typografi
+\renewcommand*{\ttdefault}{pcr}		% Monospace typografi
 
 %-------------------------------------------------------------------------------
 % Flere referencer
@@ -35,6 +35,64 @@
 %-------------------------------------------------------------------------------
 % Automatisk navngivning
 \addto\captionsdanish{\renewcommand\contentsname{Indholdsfortegnelse}}
+
+%-------------------------------------------------------------------------------
+% Nummerering af overskrifter
+\setsecnumdepth{subsubsection}  % Dybden af nummerede overkrifter (part/chapter/section/subsection)
+\settocdepth{subsection}  % Dybden af overskrifter vist i indholdsfortegnelsen
+
+%-------------------------------------------------------------------------------
+% Kapitel udseende
+\definecolor{numbercolor}{gray}{0.7}  % Definerer farve til brug til Kapitel udseende
+\newif\ifchapternonum
+
+\makechapterstyle{jenor}{
+	\renewcommand\beforechapskip{-30pt}
+	\renewcommand\afterchapskip{10pt}
+	\renewcommand\printchaptername{}
+	\renewcommand\printchapternum{}
+	\renewcommand\printchapternonum{\chapternonumtrue}
+	\renewcommand\chaptitlefont{\fontfamily{pbk}\fontseries{db}\fontshape{n}\fontsize{25}{35}\selectfont\raggedright}
+	\renewcommand\chapnumfont{\fontfamily{pbk}\fontseries{m}\fontshape{n}\fontsize{1in}{0in}\selectfont\color{numbercolor}}
+	\renewcommand\printchaptertitle[1]{
+		\noindent
+		\ifchapternonum
+			\begin{tabularx}{\textwidth}{X}{
+				\parbox[b][30pt]{\linewidth}{
+					\chaptitlefont ##1
+				}
+			}
+			\end{tabularx}
+			\par\vskip2mm\hrule
+		\else
+			\begin{tabularx}{\textwidth}{Xl}{
+				\parbox[b]{\linewidth}{
+					\chaptitlefont ##1
+				}
+			} & \raisebox{-15pt}{
+				\chapnumfont\thechapter
+			}
+			\end{tabularx}
+			\par\vskip2mm\hrule
+		\fi
+	}
+}
+
+\chapterstyle{jenor}  % Valg af kapiteludseende
+
+%-------------------------------------------------------------------------------
+% Chapter text uden at være reelt chapter
+\newcommand{\fakeChapter}[1]{
+	\vspace{50pt}
+	\addcontentsline{toc}{chapter}{#1}
+	\begin{tabularx}{\textwidth}{X}{
+		\parbox[b][30pt]{\linewidth}{
+			\fontfamily{pbk}\fontseries{db}\fontshape{n}\fontsize{25}{35}\selectfont\raggedright #1
+		}
+	}
+	\end{tabularx}
+	\par\vskip2mm\hrule
+}
 
 %-------------------------------------------------------------------------------
 % Header/footer

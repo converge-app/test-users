@@ -1,9 +1,9 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,openany]{memoir}
 
 %*******************************************************************************
 % ÆNDRINGER LAVES HER
 %*******************************************************************************
-\title{Template Dokument}
+\title{Kravspecifikation}
 % Husk at opdatere "AUTHOR" og dato i filen "00_VersionHistory".
 
 %-------------------------------------------------------------------------------
@@ -22,7 +22,9 @@
 	\tableofcontents\thispagestyle{fancy}
 	\import{Sektioner/}{00_VersionHistory}  \newpage
 
-	\import{Sektioner/}{99_Eksempel}  \newpage
+	\import{Sektioner/}{introduktion}
+
+	\import{Sektioner/}{description}  \newpage
 
 	\phantomsection \addcontentsline{toc}{section}{Referencer}
 	\printbibliography
