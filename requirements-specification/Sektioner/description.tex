@@ -9,7 +9,13 @@ For at specificere de overordnede krav til systemet, er kravene inddelt efter Mo
 Disse krav skal implementeres i systemet.
 
 \begin{itemize}
-    \item 
+    \item En bruger skal kunne være enten freelancer eller employer
+    \item En employer skal kunne udgive projekter
+    \item En freelancer skal kunne tage projekter og udføre dem
+    \item En bruger skal kunne modtage eller overføre penge
+    \item En bruger skal kunne chatte med en anden bruger
+    \item Systemet skal have en web portal
+    \item En bruger skal kunne registrere sig og kunne logge ind
 \end{itemize}
 
 \subsection{Should have}
@@ -17,7 +23,9 @@ Disse krav skal implementeres i systemet.
 Disse krav burde implementeres i systemet.
 
 \begin{itemize}
-    \item 
+    \item En freelancer bør kunne indlevere materiale til et projekt
+    \item En bruger bør kunne snakke med en anden bruger via. video chat
+    \item En freelancer bør kunne søge efter jobs via. genre og nøgle ord
 \end{itemize}
 
 \subsection{Could have}
@@ -25,7 +33,13 @@ Disse krav burde implementeres i systemet.
 Disse krav kunne implementeres i systemet.
 
 \begin{itemize}
-    \item 
+    \item En freelancer kan tage tests til at vise sin ekspertise
+    \item En bruger kan registreres med google OpenIdConnect (Single-sign-on)
+    \item En bruger kan gendande sit password, og modtage en mail med et nyt
+    \item En bruger kan slette sin konti
+    \item En bruger kan få al data om sin identitet (GDPR)
+    \item En bruger kan ændre email \& password
+    \item En bruger vil modtage notifikationer med opdateringer fra platformen
 \end{itemize}
 
 \subsection{Wont have}
@@ -33,7 +47,149 @@ Disse krav kunne implementeres i systemet.
 Disse krav vil ikke blive implementeres i systemet.
 
 \begin{itemize}
-    \item 
+    \item
 \end{itemize}
 
+\section{Funktionelle krav}
 
+I dette afsnit vil de funktionelle krav til systemet blive beskrevet. Funktionelle krav til systemet beskrives ved brug af Initiatives, Epics, og User Stories. På øverste lag er Initiatives, som beskriver hele missionen, dernest er det brudt ned i mindre bider som epics, og epics bliver indelt i user stories, hvilket bør have en leve tid på ca. 1 sprint (1-2 uger).
+
+Initiatives er beskrevet som en sætning f.eks.  ``Firmaet skal have 20\% flere kunder det næste år.''
+
+Derefter er det indelt I epics som beskriver nogle dele af den funtionalitet for at nå målet (initiativet). Et eksempel kunne være: ``Åbne mobil app i Kina'', ``Mindske load tid med 20\%'', ``Lave en ny generation af adds''.
+
+Som sagt er det ikke muligt at skulle lave en helt ny version af en app på bare et par uger, derfor indeler man epics i user stories. User stories er en måde at beskrive krav og opførsel, og er anderledes fra tasks og Use cases, i at de er beregnet til at være en simpel og effektiv måde at snakke med kunden omkring tidligere nævnt krav og opførsel. Samtidig er de med til at starte en samtale, så man kan gå fra ide til produkt, og er primært rettet mod kunden og den opførsel der skal bruges så udviklere nemmere kan se hvornår de er i mål. Et eksempel på en User Story kunne være: ``Som bruger kan jeg læse forsiden på kinesisk, så jeg nemmere kan forstå det'', ``Som udvikler kan jeg fjerne gamle biblioteker ikke længere i brug, så appen starter hurtigere''. Dette er bare få eksempler på User Stories, men følger stadigvæk en fast skabelon, som en bruger, kan jeg, så jeg kan få.
+
+User Stories vil være inddelt under epics, derefter et nummer. Dvs. at epic 1, og User Story 6, vil være 1.6.
+
+\subsection{Aktører}
+
+I dette afsnit vil aktørerne for systemet blive beskrevet.
+
+I dette afsnit vil aktører blive beskrevet for systemet, Aktører er ikke det samme som en persona, men en persona udspringer af en aktør men er et virkeligt billede af dette.
+
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for employer}
+        \label{tab:employer}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Employer}}                                                                                                                                                                                           \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Employer er en bruger som ønsker at få lavet et stykke arbejde som han/hende ønsker gjort. Personen søger den ekspertise der er på platformen, og derfor nogle af de freelancers der befinder sig.}    \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Jens er en entrepeneur på 40 år, han har sit eget murefirma og har brug for en ny brochure til sit firma, hans budget er ikke stort, men han vil stadig gerne have god kvalitet.}                      \\
+                                                   & \multicolumn{1}{p{10cm}}{Karsten er ansat i en størrer design virksomhed, denne virksomhed bruger som regel outsourcing til at fremstille websites fra deres designs. Han er den primære person ansat til at styre outsourcing} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At udnytte Converge til at finde god og billig hjælp til opgaver som kræver ekstra hænder.}                                                                                                            \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for freelancer}
+        \label{tab:freelancer}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Freelancer}}                                                                                                                                                                            \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Freelancer er en bruger som ønsker at bruge Converge til at tjene penge ved brug af sin ekspertise}                                                                                       \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Mette er en Web designer som bruger Converge ved siden af sit fuldtidsjob. Mette har brug for nogle ekstra penge, så hun tager gerne mange clienter og er en flittig bruger af systemet.} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At udnytte Converge til at finde klienter, både kortvarigt og langsigtet.}                                                                                                                \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for admin}
+        \label{tab:admin}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Admin}}                                                                                                                                              \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Admin er en administrator ansat af Converge til at holde styr på eller udvikle på Converge, dette indebærer tekniske løsninger}                        \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Lars er en Admin ved Converge og bruger meget tid på at kigge fejlsøge i eksisterende løsninger, samt at oprette detaljerede rapporter til Developers} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At bruge meta applikationer omkring Converge til at fejlsøge i systemet.}                                                                              \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for developer}
+        \label{tab:developer}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Developer}}                                                                                                                              \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Developer er en person ansat af Converge til at udvikle på platformen, dette vil sige alt fra design til at skubbe kode til produktion}    \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Samir er en udvikler ansat på deltid ved Converge, og udvikler aktivt på applikationen, han er flittig til at tage issues og udbedre fejl} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At forbedre Converge, så det bliver den bedste freelancing platform}                                                                       \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for supporter}
+        \label{tab:supporter}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Supporter}}                                                                                                                                                            \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Supporter har kunde kontakt og informere admins omkring mulige fejl}                                                                                                     \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Kasper er ansat som supporter ved Converge, hans dagligdag går med at snakke med kunder omkring deres problemer, han har et tæt samarbejde med flere af firmaets Admins} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At give kunderne den bedste oplevelse muligt, så Converge kan blive den bedste freelancing platform}                                                                     \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\subsection{Epics}
+
+\begin{itemize}
+  \item Logon \& Registering
+    \begin{itemize}
+        \item Som en bruger kan jeg logge på, så jeg kan tilgå systemet
+        \item Som en bruger kan jeg registreres, så jeg kan oprettes i systemet
+    \end{itemize}
+  \item Employer flow
+  \begin{itemize}
+      \item Som en Employer arbejde med en freelancer, så jeg kan få lavet noget ønsket arbejde
+  \end{itemize}
+  \item Freelancer flow
+  \begin{itemize}
+      \item Som en Freelancer kan jeg arbejde med en Employer, så jeg kan tjene penge
+  \end{itemize}
+  \item Video chat
+  \begin{itemize}
+      \item Som en bruger kan jeg snakke med andre brugere, så jeg nemmere kan formidle mine tanker
+  \end{itemize}
+  \item Text chat
+  \begin{itemize}
+      \item Som en bruger kan jeg skrive med andre brugere, så jeg kan formidle mine tanker
+  \end{itemize}
+  \item Search
+  \begin{itemize}
+      \item Som en bruger kan jeg søge, så jeg kan finde hvad jeg leder efter
+  \end{itemize}
+  \item Cloud Native Tooling (meta applikation)
+  \begin{itemize}
+      \item Som en udvikler kan jeg bruge diverse værktøjer til at udvikle på systemet.
+  \end{itemize}
+\end{itemize}
