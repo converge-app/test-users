@@ -1,11 +1,35 @@
 \section{Ydeevne krav}
-Det system, som vi skal udvikle vil blive lanceret som et rigtigt system, derfor forventes  
+Det system, som vi skal udvikle vil blive lanceret som et rigtigt system, derfor er der en række krav til systemets ydeevne. Derfor vil systemets ydeevne blive beskrevet i dette afsnit.   
 \begin{itemize}  
-     \item 
+     \item System skal håndtere forventede og ikke-forventede fejl på måder, som forhindre tab af information og lang nedetid. Det skulle således have indbygget fejltest, som for eksempel kunne identificere ugyldigt brugernavn / adgangskode.
+     \item Systemets ydelse skal være hurtig og præcis.
+     \item Systemet skal kunne håndtere store datamængder. Det skal således rumme et stort antal brugere uden fejl.
 \end{itemize}
 
 \subsection{Sikkerheds krav}
-
-\subsection{Security krav}
+\begin{itemize}  
+    \item Korrekt brugergodkendelse skal leveres.
+    \item Systemet har forskellige typer brugere, og enhver bruger har adgangsbegrænsninger.
+    \item Ingen skal være i stand til at hacke brugernes adgangskode.
+    \item Der skal være separate konti for admin og medlemmer, således at intet medlem kan få adgang til databasen, og kun admin har rettighederne til at opdatere databasen.
+\end{itemize}
 
 \subsection{Brugerkrav}
+Brugere af systemet kan enten være freelancer eller employer.  Medlemmerne antages at de har grundlæggende it-kompetencer og derudover har freelanceren også nogle individuelle kompetencer for eksempel, at de er specialister i at kode i C++. Administratorerne af systemet skal have mere viden om systemets interne og er i stand til at afhjælpe når der opstår problemer eller hvis systemet går ned. Den rette brugergrænseflade, brugermanual, onlinehjælp og guiden til at benytte systemet skal være tilstrækkelig til at uddanne brugerne om, hvordan de bruger systemet uden problemer. 
+Administratoren giver visse faciliteter til brugerne i form af:
+
+\begin{itemize}  
+    \item Glemt adgangskode.
+    \item Video chat mellem freelancer og employer.
+    \item Chatte med andre brugere.
+    \item Indbetaling og udbetaling.
+    \item Fortage ændring i personlige indstillinger. 
+    \item Oploade et projekt, hvis man ønsker og udgive et projekt. 
+    \item Brugeren kan opstille en personligt portfolio, så andre kan  gå ind og se hvad brugerens kompetencer er.
+    \item Brugere registering, hvis han/hun ønsker at blive en del af systemet.
+    \item tidslinje over projektets fremgang, det vil sige her kan man se hvor langt projektet er og hvornår det er blevet færdig.
+    \item Byde på forskellige projekter. 
+    \item Søge efter et specifikt projekt, indenfor brugerens kompetencer.  
+    \item Datamigrering, dvs. når bruger registreres for første gang, lagres dataene i databasen.
+    \item Datareplikering, dvs. hvis dataene går tabt i en gren, gemmes de stadig på serveren
+\end{itemize}
