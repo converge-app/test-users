@@ -16,6 +16,7 @@
     "**/*.out": true,
     "**/*.run.xml": true,
     "**/*.synctex.gz": true,
-    "**/*.toc": true
+    "**/*.toc": true,
+    "**/*.ver": true
   }
 }

@@ -14,11 +14,11 @@
 %*******************************************************************************
 
 % Inkluder preambles
-\usepackage{../SharedPreamble}
+\usepackage{latex-preamble/SharedPreamble}
 \usepackage{PrivatePreamble}
 
 \begin{document}
-	\import{../}{Forside}  \newpage
+	\import{Sektioner/}{Forside}  \newpage
 	\tableofcontents\thispagestyle{fancy}
 	\import{Sektioner/}{00_VersionHistory}  \newpage
 
@@ -27,8 +27,6 @@
 	\import{Sektioner/}{description}  \newpage
 	\import{Sektioner/}{assumptions-dependencies}
 	\import{Sektioner/}{external-interface-requirement}
-
-	
 
 	\phantomsection \addcontentsline{toc}{section}{Referencer}
 	\printbibliography
