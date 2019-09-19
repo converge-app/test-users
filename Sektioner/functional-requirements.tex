@@ -1,0 +1,327 @@
+
+\chapter{Funktionelle krav}
+
+I dette afsnit vil de funktionelle krav til systemet blive beskrevet. Funktionelle krav til systemet beskrives ved brug af Initiatives, Epics, og User Stories. På øverste lag er Initiatives, som beskriver hele missionen, dernest er det brudt ned i mindre bider som epics, og epics bliver indelt i user stories, hvilket bør have en leve tid på ca. 1 sprint (1-2 uger).
+
+Initiatives er beskrevet som en sætning f.eks.  ``Firmaet skal have 20\% flere kunder det næste år.''
+
+Derefter er det indelt I epics som beskriver nogle dele af den funtionalitet for at nå målet (initiativet). Et eksempel kunne være: ``Åbne mobil app i Kina'', ``Mindske load tid med 20\%'', ``Lave en ny generation af adds''.
+
+Som sagt er det ikke muligt at skulle lave en helt ny version af en app på bare et par uger, derfor indeler man epics i user stories. User stories er en måde at beskrive krav og opførsel, og er anderledes fra tasks og Use cases, i at de er beregnet til at være en simpel og effektiv måde at snakke med kunden omkring tidligere nævnt krav og opførsel. Samtidig er de med til at starte en samtale, så man kan gå fra ide til produkt, og er primært rettet mod kunden og den opførsel der skal bruges så udviklere nemmere kan se hvornår de er i mål. Et eksempel på en User Story kunne være: ``Som bruger kan jeg læse forsiden på kinesisk, så jeg nemmere kan forstå det'', ``Som udvikler kan jeg fjerne gamle biblioteker ikke længere i brug, så appen starter hurtigere''. Dette er bare få eksempler på User Stories, men følger stadigvæk en fast skabelon, som en bruger, kan jeg, så jeg kan få.
+
+User Stories vil være inddelt under epics, derefter et nummer. Dvs. at epic 1, og User Story 6, vil være 1.6.
+
+\section{Aktører}
+
+I dette afsnit vil aktørerne for systemet blive beskrevet.
+
+I dette afsnit vil aktører blive beskrevet for systemet, Aktører er ikke det samme som en persona, men en persona udspringer af en aktør men er et virkeligt billede af dette.
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for en bruger}
+        \label{tab:bruger}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Bruger}}                                                                                                                                                             \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{En bruger er en person som har interesse i at bruge converge platformen, om det er købt eller salg. Derfor kan en bruger være både en freelancer og/eller en employer} \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{En bruger har en persona som enten eller en freelancer eller employer}                                                                                                 \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{Målet er at udnytte Converge til at få løst den problemstilling, personen nu må have. Om det er at tjene penge eller få lavet noget arbejde}                           \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for employer}
+        \label{tab:employer}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Employer}}                                                                                                                                                                                           \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Employer er en bruger som ønsker at få lavet et stykke arbejde som han/hende ønsker gjort. Personen søger den ekspertise der er på platformen, og derfor nogle af de freelancers der befinder sig.}    \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Jens er en entrepeneur på 40 år, han har sit eget murefirma og har brug for en ny brochure til sit firma, hans budget er ikke stort, men han vil stadig gerne have god kvalitet.}                      \\
+                                                   & \multicolumn{1}{p{10cm}}{Karsten er ansat i en størrer design virksomhed, denne virksomhed bruger som regel outsourcing til at fremstille websites fra deres designs. Han er den primære person ansat til at styre outsourcing} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At udnytte Converge til at finde god og billig hjælp til opgaver som kræver ekstra hænder.}                                                                                                            \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for freelancer}
+        \label{tab:freelancer}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Freelancer}}                                                                                                                                                                            \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Freelancer er en bruger som ønsker at bruge Converge til at tjene penge ved brug af sin ekspertise}                                                                                       \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Mette er en Web designer som bruger Converge ved siden af sit fuldtidsjob. Mette har brug for nogle ekstra penge, så hun tager gerne mange clienter og er en flittig bruger af systemet.} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At udnytte Converge til at finde klienter, både kortvarigt og langsigtet.}                                                                                                                \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for admin}
+        \label{tab:admin}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Admin}}                                                                                                                                              \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Admin er en administrator ansat af Converge til at holde styr på eller udvikle på Converge, dette indebærer tekniske løsninger}                        \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Lars er en Admin ved Converge og bruger meget tid på at kigge fejlsøge i eksisterende løsninger, samt at oprette detaljerede rapporter til Developers} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At bruge meta applikationer omkring Converge til at fejlsøge i systemet.}                                                                              \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for developer}
+        \label{tab:developer}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Developer}}                                                                                                                              \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Developer er en person ansat af Converge til at udvikle på platformen, dette vil sige alt fra design til at skubbe kode til produktion}    \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Samir er en udvikler ansat på deltid ved Converge, og udvikler aktivt på applikationen, han er flittig til at tage issues og udbedre fejl} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At forbedre Converge, så det bliver den bedste freelancing platform}                                                                       \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\begin{table}[H]
+    \begin{small}
+        \caption{Aktør beskrivelse for supporter}
+        \label{tab:supporter}
+        \begin{center}
+            \begin{tabular}[c]{l|l}
+                \multicolumn{1}{c|}{\textbf{Navn}} & \multicolumn{1}{c}{\textbf{Supporter}}                                                                                                                                                            \\
+                \hline
+                Beskrivelse                        & \multicolumn{1}{p{10cm}}{Supporter har kunde kontakt og informere admins omkring mulige fejl}                                                                                                     \\
+                \hline
+                Persona                            & \multicolumn{1}{p{10cm}}{Kasper er ansat som supporter ved Converge, hans dagligdag går med at snakke med kunder omkring deres problemer, han har et tæt samarbejde med flere af firmaets Admins} \\
+                \hline
+                Mål                                & \multicolumn{1}{p{10cm}}{At give kunderne den bedste oplevelse muligt, så Converge kan blive den bedste freelancing platform}                                                                     \\
+            \end{tabular}
+        \end{center}
+    \end{small}
+\end{table}
+
+\section{Epics}
+
+\begin{itemize}
+    \item Logon \& Registering, Tilgå systemet
+          \begin{itemize}
+              \item Som en bruger kan jeg logge på, så jeg kan tilgå systemet
+              \item Som en bruger kan jeg registreres, så jeg kan oprettes i systemet
+          \end{itemize}
+    \item Employer flow
+          \begin{itemize}
+              \item Som en Employer arbejde med en freelancer, så jeg kan få lavet noget ønsket arbejde
+          \end{itemize}
+    \item Freelancer flow
+          \begin{itemize}
+              \item Som en Freelancer kan jeg arbejde med en Employer, så jeg kan tjene penge
+          \end{itemize}
+    \item Video chat
+          \begin{itemize}
+              \item Som en bruger kan jeg snakke med andre brugere, så jeg nemmere kan formidle mine tanker
+          \end{itemize}
+    \item Text chat
+          \begin{itemize}
+              \item Som en bruger kan jeg skrive med andre brugere, så jeg kan formidle mine tanker
+          \end{itemize}
+    \item Search
+          \begin{itemize}
+              \item Som en bruger kan jeg søge, så jeg kan finde hvad jeg leder efter
+          \end{itemize}
+    \item Cloud Native Tooling (meta applikation)
+          \begin{itemize}
+              \item Som en udvikler kan jeg bruge diverse værktøjer til at udvikle på systemet.
+          \end{itemize}
+\end{itemize}
+
+\subsection{Epic 1 - Logon \& Registering, Tilgå systemet}
+
+Som en bruger ønsker jeg at logge på, så jeg kan tilgå systemet
+
+Som en bruger ønsker jeg at kunne registreres, så jeg kan oprettes i systemet
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 1}
+    \label{tab:us-epic1}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som} & \textbf{ønsker jeg}                      & \textbf{for at}                          \\
+        \hline
+        1.1               & bruger       & at logge ind                             & tilgå systemet                           \\
+        \hline
+        1.2               & bruger       & at bliver registreret                    & blive oprettet i systemet                \\
+        \hline
+        1.3               & bruger       & at kunne logge ind med google            & nemt kunne logge ind                     \\
+        \hline
+        1.4               & bruger       & at kunne indtaste personlige oplysninger & få et mere målrettet system oplevelse    \\
+        \hline
+        1.5               & bruger       & at kunne slette min konto                & ikke længere være en del af systemet     \\
+        \hline
+        1.6               & bruger       & at kunne skifte mit kodeord              & sikre min konto                          \\
+        \hline
+        1.7               & bruger       & gendande mit kodeord                     & få adgang til min konti igen             \\
+        \hline
+        1.8               & bruger       & at kunne ændre i mine oplysninger        & min profil stemmer overens med mig       \\
+        \hline
+        1.9               & bruger       & at logge ind automatisk                  & ikke skulle skrive mit kodeord hver gang \\
+    \end{tabular}
+\end{table}
+
+\subsection{Epic 2 - Employer flow}
+
+Som en Employer ønsker jeg at arbejde med en freelancer, så jeg kan få lavet noget ønsket arbejde
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 2}
+    \label{tab:us-epic2}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som} & \textbf{ønsker jeg}                        & \textbf{for at}                                                                                     \\
+        \hline
+        2.1               & Employer     & at kunne oprette et projekt                & få freelancers opmørksomhed og løst en opgave                                                       \\
+        \hline
+        2.2               & Employer     & at kunne slette et projekt                 & \multicolumn{1}{p{6cm}}{slette mit opslag fordi jeg har fortryd, eller det ikke længere er gyldigt} \\
+        \hline
+        2.3               & Employer     & at kunne redigere mit opslag               & ændre mine krav                                                                                     \\
+        \hline
+        2.4               & Employer     & at kunne vælge en freelancer               & få det bedste resultat og gå igang                                                                  \\
+        \hline
+        2.5               & Employer     & at kunne se kvalifikationer på freelancer  & få den mest kvalificerede freelancer                                                                \\
+        \hline
+        2.6               & Employer     & at kunne uploade forskellige dokumenter    & give freelancere materiale at arbejde med                                                           \\
+        \hline
+        2.7               & Employer     & at kunne modtage resultater                & fuldføre jobbet                                                                                     \\
+        \hline
+        2.8               & Employer     & at betale det, det koster at få materialet & for at fuldføre transaktionen                                                                       \\
+    \end{tabular}
+\end{table}
+
+\subsection{Epic 3 - Freelancer flow}
+
+Som en Freelancer ønsker jeg at arbejde med en employer, så jeg kan få lavet noget arbejde og derved modtage penge
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 3}
+    \label{tab:us-epic3}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som} & \textbf{ønsker jeg}                             & \textbf{for at}                  \\
+        \hline
+        3.1               & Freelancer   & at kunne byde på et projekt                     & få noget arbejde                 \\
+        \hline
+        3.2               & Freelancer   & at kunne slette min anmodning                   & fortyde                          \\
+        \hline
+        3.3               & Freelancer   & at kunne kommentere på et projekt               & for at give min mening           \\
+        \hline
+        3.4               & Freelancer   & at kunne uploade og modtage materiale           & for at have noget at arbejde med \\
+        \hline
+        3.5               & Freelancer   & at kunne se employers profil                    & for at få konfidens i udbyderen  \\
+        \hline
+        3.6               & Freelancer   & at kunne modtage betaling i bytte for materiale & for at fuldføre transkationen    \\
+    \end{tabular}
+\end{table}
+
+\subsection{Epic 4 - Video chat}
+
+Som en bruger kan jeg snakke med andre brugere, så jeg nemmere kan formidle mine tanker.
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 4}
+    \label{tab:us-epic4}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som} & \textbf{ønsker jeg}                             & \textbf{for at}      \\
+        \hline
+        4.1               & Bruger       & at kunne oprette en samtale med en anden bruger & kommunikere          \\
+        \hline
+        4.2               & Bruger       & at kunne have video chat med en anden bruger    & se en anden bruger   \\
+        \hline
+        4.3               & Bruger       & at kunne skrive med en anden bruger             & formidle mine tanker \\
+        \hline
+        4.4               & Bruger       & at kunne lukke et opkald                        & ikke snakke længere  \\
+    \end{tabular}
+\end{table}
+
+\subsection{Epic 5 - Text chat}
+
+Som en bruger kan jeg snakke med andre brugere, så jeg kunne formidle mine tanker.
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 5}
+    \label{tab:us-epic5}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som} & \textbf{ønsker jeg}                        & \textbf{for at}           \\
+        \hline
+        5.1               & Bruger       & at kunne skrive med en anden bruger        & formidle mine tanker      \\
+        \hline
+        5.2               & Bruger       & at kunne anmode en anden bruger om kontakt & for at kunne kommunikere  \\
+        \hline
+        5.3               & Bruger       & at kunne slette en anden bruger            & ikke længere have kontakt \\
+    \end{tabular}
+\end{table}
+
+\subsection{Epic 6 - Search}
+
+Som en bruger kan jeg søge, så jeg kan finde hvad jeg leder efter
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 6}
+    \label{tab:us-epic6}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som} & \textbf{ønsker jeg}           & \textbf{for at}                     \\
+        \hline
+        6.1               & Bruger       & at kunne søge med nogle ord   & finde den ting jeg leder efter      \\
+        \hline
+        6.2               & Bruger       & at kunne filtrere med genre   & indskræke et område jeg leder efter \\
+        \hline
+        6.3               & Bruger       & at kunne slette mine filtrere & søge forfra                         \\
+    \end{tabular}
+\end{table}
+
+\subsection{Epic 7 - Cloud Native Tooling}
+
+Som en udvikler kan jeg bruge diverse værktøjer til at udvikle på systemet.
+
+\begin{table}[H]
+    \centering
+    \caption{User stories for epic 7}
+    \label{tab:us-epic7}
+    \begin{tabular}{l|l|l|l}
+        \textbf{Krav nr.} & \textbf{Som}                & \textbf{ønsker jeg}                        & \textbf{for at}                \\\hline
+        7.1               & Developer, Admin            & at kunne se logs for alle requests         & kunne spore en bruger          \\\hline
+        7.2               & Developer, Admin, Supporter & at kunne se rapporter fra brugere          & kunne gøre noget for en bruger \\\hline
+        7.3               & Developer                   & at kunne udvikle ved brug af feature flags & kunne teste i produktion       \\\hline
+        7.4               & Developer, Admin, Supporter & at kunne slette en bruger                  & fjerne dem fra systemet        \\\hline
+        7.5               & Developer, Admin, Supporter & at kunne gendande en bruger                & hjælpe en bruger               \\
+    \end{tabular}
+\end{table}
