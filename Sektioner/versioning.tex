@@ -1,0 +1,37 @@
+\subsection{Versionskontrol}
+
+Til Versionskontrol var der en del alternativer såsom
+
+\begin{itemize}
+    \item git
+    \item TFS
+    \item dropbox
+    \item google drive
+    \item SubVersion 
+\end{itemize}
+
+\subsubsection{git}
+
+Git er en meget manual versionsstyrings værktøj. Med git kan du bestemme lige præcis hvad der skal med og, hvad der ikke skal med. Noget der kan være svært med andre værktøjer der er mere aggresive som dropbox eller google drive.
+
+Git er bygget til versionering af source kode til software, og egner sig helt specifict til decentral arbejde på den samme kode base. Det egner sig rigtigt dårligt til store filer, og specielt binære filer. Git er også mere en bare et sted at samle kode, der er også et enestående redskab til at integrere alle sine værktøjer med. (GitOps, git operations)
+
+\subsubsection{TFS}
+
+Team Foundation Server, er en lidt ældre måde at lagre source kode på, TFS fungere godt hvis al ens kode skal ligge samme sted, og man ønsker at kunne arbejde flere på det, på samme tid. TFS har den fordel og ulemple at det fungere bedst med en fuld udgave af Visual Studio. Det er også ret langsom at bruge.
+
+\subsubsection{Dropbox}
+
+Dropbox er en måde at lagre filer på der egner sig utrolig meget til upload af dokumenter og billeder, der er lavet for at give en nem og hurtigt måde at lagre filer på, det egner sig ikke ret godt til samarbejde med kode.
+
+\subsubsection{Google Drive}
+
+Google drive minder meget om dropbox, men tilbyder flere mere integration med resten af google suite, såsom google doc, sheets og slides. Hvis der var valgt Google docs til dokument skrivning, ville Google Drive være valgt til at holde styr på diverse filer.
+
+\subsubsection{SubVersion}
+
+Subversion er et alternativ til git, og fungere meget på samme måde, men er lavet til at være mere simpelt at bruge.
+
+\subsubsection{Valg}
+
+Git er valgt til at huse det kode skrevet, der er specielt godt, da branching (afgrening) er en first-class-citizen, hvilket betyder at det at arbejde decentral og afkoblet er sat som prioritet i værktøjet. Med git giver det mulighed for at hele tiden have produktionsværdi kode, og at give mulighed for at have reviews af hinandens kode, inden det bliver skubbet i produktion. En kvalitet, som mange af de andre værktøjer ikke har. (TFS og SubVersion har dette). Git integrere også bedst med GitHub og GitLab som er nogle af de metaværktøjer valgt, SubVersion kunne også bruges her, men da git er mest populært, og det mest kende værktøj af Projekt gruppen.
