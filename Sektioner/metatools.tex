@@ -1,0 +1,52 @@
+\section{Meta værktøjer}
+
+Meta værktøjer er at abstrakt begreb. Men i forhold til Converge handler dem om værktøjer der beskriver noget om systemet Converge.
+
+Disse værktøjer er med til at levere en cloud native oplevelse, for udviklere og supportere. Og er derved ikke noget der røre de endelige slutbrugere.
+
+\begin{itemize}
+    \item ELK
+    \item Jaeger
+    \item Prometheus
+    \item jx
+    \item Traefik
+    \item Cloud DNS
+    \item GKE
+    \item Zeit now (NextJS)
+\end{itemize}
+
+\subsection{ELK}
+
+Elastik stack som beskrevet tidligere er brugt så Converge personale kan trace og monitorere systemet.
+
+\subsection{Jaeger}
+
+Jaeger er brugt til at monitorere, men mere specifikt til at spore fejlagtige scenarier.
+
+\subsection{Prometheus}
+
+Prometheus er brugt til at lave metrics på converge platformen, og er et must have for at se om Converges cluster og applikationer køre som de skal.
+
+\subsection{Jenkins X}
+
+Jenkins X er brugt til at holde styr på udrulningen af Converge og versionere de forskellige applikationer.
+
+\subsection{Traefik}
+
+Traefik er en reverse proxy, der interagere direkte med Kubernetes for at få dets egenskaber. Det bruges helt på kanten af Converges Kubernetes cluster og diregere trafikken ind i clustered. F.eks. når en bruger har brugt for at se produkter, så kan traefik fra et url som product.api.converge.net sende den anmodning hen til den rigtige service.
+
+Samtidig giver traefik et dashboard der gør at man kan se status på de forskellige services kørende i clusteret.
+
+\subsection{Cloud DNS}
+
+Cloud DNS binder en registrar til et api, og i dette tilfælde skal det binde et Namecheap domæne med traefik i kubernetes, samt et subdomæne til Zeit Now som hoster Converges web applikation.
+
+\subsection{GKE}
+
+Google Kubernetes Engine er et google produkt der gør man nemt og hurtigt kan stille et kubernetes cluster op. Samtidig er der installeret nogle værktøjer via. google i clusteret som gør livet nemmere, såsom KubeDNS, Prometheus, FluentD osv. Disse services bliver brugt til at forbedre og accelere ens udviklingsprocess med Kubernetes.
+
+\subsection{Zeit Now (NextJS)}
+
+Zeit er firmaet bag Now og NextJS. NextJs er beskrevet tidligere men er praktisk talt en nodejs server der servere React i en skal af NextJS kode. Det smarte ved dette er at NextJS gør at React kan loades direkte fra serveren, så bruger ikke selv behøver at gøre dette. Det gør også at crawlers som den google bruger kan gå igennem en website, som den normalt ellers ikke ville være i stand til. 
+
+Now er et udrulings produkt af Zeit og fungere ved at det kan udrulle en NextJS applikation ved hjælp af Serverless principper. Det er nemt og hurtigt, samt gør brug af alle de egenskaber som NextJS udsteder.

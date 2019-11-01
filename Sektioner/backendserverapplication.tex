@@ -1,4 +1,4 @@
-\subsection{Server applikation}
+\section{Server applikation}
 
 Til at lave en dynamisk og brugbar applikation skal der bruges noget backend. Om det er til at holde styr på brugere, facilitere en video samtale eller holde styr på filer. Så er en server essentielt.
 
@@ -7,11 +7,37 @@ Der skal bruges nogle produkter til dette
 \begin{itemize}
     \item Kubernetes
     \item Docker
+    \item Helm
     \item Asp.net Core
-    \item Go
-    \item Python flask
-    \item Firebase
+    \item MongoDB
     \item Stripe
     \item Cloud storage
-    \item 
 \end{itemize}
+
+\subsection{Kubernetes}
+
+Kubernetes er et værktøj der kan orkestrere resourcer. Om det er filsystemer, configuration eller applikationer. Kubernetes er en grænseflade som automatisk kan forbinde og orkestrere resourcer, det er et værktøj der er en af grundstenene for at kunne udvikle en cloud native platform. Det er mange andre konkurrenter, såsom mesos, docker-swarm. Men disse er ikke ligeså populære, og har ikke nær så stor understøttelse på Amazon Web Services eller Google Compute Platform.
+
+\subsection{Docker}
+
+Docker er et interessant værktøj der gør at converge kan bundle deres applikationer og levere dem til kubernetes.
+
+\subsection{Helm}
+
+Helm bruges til at versionere og udrulle applikationer på kubernetes, ligesom docker kan bundle et helt linux/windows miljø, så kan helm bundle en kubernetes resourcer. Dette er specielt nyttigt når CI/CD er brugt.
+
+\subsection{ASP.NET Core}
+
+Asp.net core er et framework til C\#. Det er baseret på asp og asp.net og er Microsofts flagskibs web framework, og kan bruges til at både drive et website eller et api. Og med 3.0 til at drive baggrundstjenester. Til Converge skal der kun bruges et Web api. Da selves hjemmesiden er drevet af en nodeserver kørende NextJS og React.
+
+\subsection{MongoDB}
+
+MongoDB er en nosql database, som er en af de få nosql databaser som erstatter en normal sql database en til en. I dette tilfælde var der lidt tvivl om der skulle bruges postgresql eller mongodb. Mongodb blev valgt på baggrund af de fremtidige skalerings egenskaber det har.
+
+\subsection{Stripe}
+
+Stripe skal bruges til online betaling, både indbetaling og udbetaling. Det interessante ved Stripe er at de udsteder et api, som man kan bruge til at selv give et selv defineret look til sin applikation. For fremtidig udvikling er det smart, da man senere kan udskifte stripe med noget andet. Stripe er dog smart, da de interagere direkte med banker og web service, så vi som Converge ikke har behov for det.
+
+\subsection{Cloud Storage}
+
+Google Cloud Storage er en fil styrings bucket, hostet af google. De udsteder api'er til mange forskellige sprog og gøre at man via. f.eks. C\# kan uploade filer til deres servere. Dette er smart, da det er kompliceret at selv holde styr på filer.

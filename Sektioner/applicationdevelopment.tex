@@ -1,4 +1,4 @@
-\subsection{Applikations Udvikling}
+\section{Applikations Udvikling}
 
 Til applikations udvikling håndteres der to forskellige begreber, selve udviklingen og når produktet skal køres i test og produktion.
 
@@ -12,63 +12,53 @@ Til udviklingen skal der bruges nogle editors eller ligende.
     \item Chrome
     \item GitLab
     \item Docker
-    \item Jenkins
     \item Jenkins X
-    \item Travis
     \item ELK
     \item Jaeger
     \item Prometheus
 \end{itemize}
 
-\subsubsection{Visual Studio}
+\subsection{Visual Studio}
 
 Visual Studio er Microsofts flagskibs IDE (Integrated development environment) og kan det hele, lave applikationer, lave hjemmesider, lave GUI, monitering osv. Desværre er der nogle i teamet der bruger Linux og Visual studio kan ikke køre på linux, derfor er dette produkt ikke valgt.
 
-\subsubsection{Visual Studio Code}
+\subsection{Visual Studio Code}
 
 Visual Studio Code bærer samme navn som Microsofts anden IDE. Men det eneste de har tilfældes er der organisation. Visual Studio Code (VS Code) er en editor og ikke et IDE. Men VS Code er et simpelt produkt, der kan designes så det passer den enkelte udvikler bedst. Dette produkt er valgt, over andre konkurrenter som Atom og Sublime. Da det er deler nogle plugins med Visual Studio som teamet allerede kender i forvejen, samtidig med at det er den IDE der får mest kærlighed af Open source communitiet. Og derfor har mest potentiale.
 
-\subsubsection{Rider \& Webstorm}
+\subsection{Rider \& Webstorm}
 
 Rider og Webstorm er 2 produkter af Jetbrains, mest kendt for deres refaktorerings plugins til Visual Studio. Rider og Webstorm er 2 IDE's der er lavet specifikt til at emulere nogle af Visual Studio's styrker. Praktisk talt er det refaktorerings plugins på steorider. Det er også det teamet har valgt det for. Med Rider og Webstorm kan teamet refaktorere henholdsvist frontend og backend applicationer.
 
-\subsubsection{Postman}
+\subsection{Postman}
 
 Postman er et produkt der gør det muligt at nemt kunne test endpoints på hjemmesider, noget som enten skal programmeres eller skrives via. wGet eller cURL. Postman er nemt at bruge, og er gratis. Derfor er det valgt.
 
-\subsubsection{Chrome}
+\subsection{Chrome}
 
 Chrome er valgt som den primære browser client applikationen skal testes i. Chrome har de bedste udviklingsværktøjer, og integrere godt med Reacts udviklings plugins.
 
-\subsubsection{GitLab}
+\subsection{GitLab}
 
 GitLab kan mange ting, alt fra git til produktion. Men det teamet skal bruge fra det er CI/CD (Continuous integration \& Continuous Delivery). Med GitLab er det muligt at definere pipelines så koden kan komme fra henholdsvis git til produktionen uden teamet selv skal lægge det på en server. Samtidig giver det nogle fordele for projekt samarbejde.
 
-\subsubsection{Docker}
+\subsection{Docker}
 
 Docker er et produkt der gør det muligt at samle et helt miljø til at køre en applikation, så det kan fragtes fra en udviklingsmaskine og helt til produktion, uden at skulle konfigurere noget. Docker er valgt for det er næsten et must have i et moderne udviklings miljø.
 
-\subsubsection{Jenkins}
-
-Jenkins fungere på samme måde som GitLab, men bygger i stedet på at man selv definere sit CI/CD miljø fra en sund mængde plugins. Noget som teamet ikke er interesserede i, eftersom Jenkins er tungt at komme i gang med, og ikke har yderligere fordele fra GitLab eller Jenkins X.
-
-\subsubsection{Jenkins X}
+\subsection{Jenkins X}
 
 Jenkins X er den næste udvikling af Jenkins, men kræver faktisk ikke engang at man køre jenkins. jx (Jenkins X) er den nye vision for jenkins og er specifikt rettet mod cloud native, kubernetes og docker. Det er ikke specielt modent og er ikke klar til produktion. Desuden kræver Jenkins X rimelig meget tid og energi, eftersom mange af de ekstisterende værktøjer er lavet til Java. jx er ikke valgt, for da teamet startede med at bruge det krævede det meget større servere, end teamet havde regnet med og derfor ikke passede ind i det budget som var planlagt for produktet.
 
-\subsubsection{Travis}
-
-Travis ligner CI/CD  Delen af gitlab meget, men har det som specifikt fokus. Desuden er Travis ikke lige så god til docker som GitLab.
-
-\subsubsection{ELK}
+\subsection{ELK}
 
 ELK er en stak af produkter fra Elastic, som Elastic search, Logstash og Kibana, det bruges til at indsamle logs fra applikationer og gør det nemt at sortere og danne analytics. Det er et essentielt produkt at have, hvis man vil lave en decentral platform.
 
-\subsubsection{Jaeger}
+\subsection{Jaeger}
 
 Jaeger bruges til Tracing og gør at man kan sporre et request igennem mange forskellige servere, det er et vigtigt produkt at have hvis, man vil udvikle en decentral application og vedligeholde den. Jaeger kan desuden bruge Elastic search som database. Så man får begge features i en.
 
-\subsubsection{Prometheus}
+\subsection{Prometheus}
 
 Prometheus er et værktøj der er beregnet til at kunne hente metrics fra mange forskellige services, og underrette de parter der har brug for det. Prometheus kan nemt integreres i et system, og er vigtigt for at kunne se om nogle services er nede eller ej.
 
