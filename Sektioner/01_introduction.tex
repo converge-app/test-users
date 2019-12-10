@@ -2,7 +2,7 @@
 
 I dette dokument vil Converge projektets integration med tredjeparter blive beskrevet.
 
-\section{Stripe}
+\chapter{Stripe}
 
 Stripe er en tredjepart som tilbyder api'er til betaling. I denne kontekst er det brugt når en bruger i converge appen har brug for et konti til at enten købe et produkt eller modtage penge for et produkt, så er det krævet at brugeren opretter en konti ved Stripe. Dette sker ved at brugeren trykker på Connect to Stripe på siden app.converge-app.net/account. Når denne konti er oprettet vil brugeren blive redirected tilbage til Converge-spa. Og kan nu modtage og overføre penge.
 
@@ -12,7 +12,7 @@ Konti brugt til Stripe er converge.kjuulh@gmail.com. I staging vil der ikke bliv
 
 De forskellige flows vil blive beskrevet under:
 
-\subsubsection{Oprettelse af konti}
+\section{Oprettelse af konti}
 
 Til oprettelse af en konti vil flowet være således
 
@@ -28,7 +28,7 @@ Med Stripe pålægges der nogle krav til betaling som man normalt ikke ville hav
 
 Desuden kræves der meget information når en bruger skal oprette en konti, dette er for at undgå hvidvask og svindel. Stripe implementere også SCA (Strong Customer Authentication), hvilket betyder at Stripe kræves af EU at kende til hvem brugeren er. Derfor kræves der personlig information for at få oprettet en konti.
 
-\subsubsection{Betaling}
+\section{Betaling}
 
 Ved en betaling er der følgende skridt:
 
@@ -43,7 +43,7 @@ Ved en betaling er der følgende skridt:
 
 Bemærk at den vigtige information er at et payment intent blive lavet på serveren, dette er bare for at godkende at en bruger kan betale den ønskede mængde, det er her mængden af pengene defineres og verificeres. Dernest sker selve overførslen mellem brugerens instans af Converge-spa i browseren og Stripes egne servere. Dette er helt ideelt da brugerens kort oplysninger aldrig kommer til at røre Converge-cluster.
 
-\subsubsection{Udbetaling}
+\section{Udbetaling}
 
 Udbetaling fungere ved at ved oprettelsen af en konti ved Stripe er et IBAN nummer givet, dette fungere ligesom et konti nummer, men er også valid internationalt. Dette betyder at kontoen tilknyttet brugeren har en forbindelse til en på gældende bank.
 
@@ -52,10 +52,14 @@ Udbetaling fungere ved at ved oprettelsen af en konti ved Stripe er et IBAN numm
     \item Dette payout request sendes derefter til Stripe som verificere dette og pengene sættes til udbetaling inden for de næste 5 bankdage.
 \end{itemize}
 
-\subsubsection{Overførsel}
+\section{Overførsel}
 
 Ved overførsel af penge flyttes en mængde penge fra en Stripe konti til en anden. Dette fungere meget ligesom en udbetaling, men istedet for at bruge en ekstern konti flyttes dette til en anden intern konti.
 
 \section{Stripe Konti}
 
 Selve Stripe kontien er beskrevet tidligere, den måde kontien er oprettet ved, er at den er oprettet under den primære konti for converge.
+
+\chapter{Google Cloud Storage}
+
+Google cloud storage er en service google cloud tilbyder, denne storage bruges som en database, men er beregnet til at gemme størrere filer, såsom film, billeder osv. Denne type storage er gemt bagved file-service hvilket håndterer upload og linking af forretningslogik til de individuelle filer. Denne service indeholder også den hemmelighed som skal bruges til upload af filer.
